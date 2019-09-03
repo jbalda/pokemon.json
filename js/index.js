@@ -49,7 +49,7 @@ function buscar(conFiltro) {
 function filtrar(dataArray, nombre, ataqueMin, ataqueMax) {
     let resultado = [];
     dataArray.forEach(element => {
-        if ((!nombre || element.name.toLowerCase().indexOf(nombre) >= 0) && //Si especificó nombre
+        if ((!nombre || element.name.toLowerCase().indexOf(nombre.toLowerCase()) >= 0) && //Si especificó nombre
             (!ataqueMin || element.base.Attack >= ataqueMin) && //Si especificó ataqueMin 
             (!ataqueMax || element.base.Attack <= ataqueMax)) {  //Si especificó ataqueMax
             resultado.push(element);
