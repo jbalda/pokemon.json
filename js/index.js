@@ -31,7 +31,11 @@ function buscar(conFiltro) {
             let defensaMin =document.getElementById("form-defensa-min").value; 
             let defensaMax =document.getElementById("form-defensa-max").value; 
 
-            dataArray = filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax );
+            //Agregado para filtrar por Velocidad
+            let velocidadMin =document.getElementById("form-velocidad-min").value; 
+            let velocidadMax =document.getElementById("form-velocidad-max").value; 
+
+            dataArray = filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax, velocidadMin, velocidadMax);
         }
 
         mostrarResultados(dataArray);
@@ -54,7 +58,7 @@ function buscar(conFiltro) {
  * @param {number} ataqueMin 
  * @param {number} ataqueMax 
  */
-function filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax) {
+function filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax, velocidadMin, velocidadMax) {
     let resultado = [];
     dataArray.forEach(element => {
         if ((!nombre || element.name.toLowerCase().indexOf(nombre.toLowerCase()) >= 0) && //Si especificó nombre
@@ -62,8 +66,12 @@ function filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defe
             (!ataqueMax || element.base.Attack <= ataqueMax) && //Si especificó ataqueMax
             
             (!tipo || element.type == tipo) && //Si especifico un tipo
+
             (!defensaMin || element.base.Defense >= defensaMin) && //Si especificó ataqueMin 
-            (!defensaMax || element.base.Defense <= defensaMax) //Si especificó ataqueMax
+            (!defensaMax || element.base.Defense <= defensaMax) &&//Si especificó ataqueMax
+
+            (!velocidadMin || element.base.Speed >= velocidadMin) && //Si especificó ataqueMin 
+            (!velocidadMax || element.base.Speed <= velocidadMax) //Si especificó ataqueMax
             ) { 
             resultado.push(element);
         }
