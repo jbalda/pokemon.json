@@ -27,8 +27,11 @@ function buscar(conFiltro) {
             let selTipo = document.getElementById("form-tipo");
             let tipo = selTipo[selTipo.selectedIndex].value;
 
+            //Agregado para filtrar por Defensa
+            let defensaMin =document.getElementById("form-defensa-min").value; 
+            let defensaMax =document.getElementById("form-defensa-max").value; 
 
-            dataArray = filtrar(dataArray, nombre, ataqueMin, ataqueMax,tipo);
+            dataArray = filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax );
         }
 
         mostrarResultados(dataArray);
@@ -51,14 +54,16 @@ function buscar(conFiltro) {
  * @param {number} ataqueMin 
  * @param {number} ataqueMax 
  */
-function filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo) {
+function filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax) {
     let resultado = [];
     dataArray.forEach(element => {
         if ((!nombre || element.name.toLowerCase().indexOf(nombre.toLowerCase()) >= 0) && //Si especificó nombre
             (!ataqueMin || element.base.Attack >= ataqueMin) && //Si especificó ataqueMin 
             (!ataqueMax || element.base.Attack <= ataqueMax) && //Si especificó ataqueMax
             
-            (!tipo || element.type == tipo)
+            (!tipo || element.type == tipo) && //Si especifico un tipo
+            (!defensaMin || element.base.Defense >= defensaMin) && //Si especificó ataqueMin 
+            (!defensaMax || element.base.Defense <= defensaMax) //Si especificó ataqueMax
             ) { 
             resultado.push(element);
         }
