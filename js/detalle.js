@@ -36,13 +36,43 @@ function filtrarPorId(arrPokemones, id){
     if(!pokemon){
         alert("No encontro pokemon")
     }else{
-        mostrar(pokemon.id + " " + pokemon.name);
+        mostrar(pokemon);
     }
 }
 
 function mostrar (pokemon){
     let div = document.getElementById("resultado");
-    let t = 
+    let secImagen = document.getElementById("secImagen");
+    secImagen.innerHTML ="<img class='card-img' src='" + pokemon.picture +"'>"
+    let secDatos = document.getElementById("datos");
+    let secBody = document.createElement("div");
+    secBody.setAttribute("class","card-body");
+    secDatos.appendChild(secBody);
+    let titulo = document.createElement("h2");
+    titulo.setAttribute("class", "card-title display-1 text-center");
+    titulo.innerText = pokemon.name; 
+    secBody.appendChild(titulo);
+    let secTipos = document.createElement("div");
+    secTipos.setAttribute("class","text-center mt-2 mb-2");
+    pokemon.type.forEach(e =>{
+        let spanTipo= document.createElement("span");
+        spanTipo.setAttribute("class", "btn btn-primary mr-2");
+        spanTipo.innerText = e;
+        secTipos.appendChild(spanTipo);
+    });
+    secBody.appendChild(secTipos);
+    let secBase = document.createElement("div");
+    secBody.appendChild(secBase);
+    let codTabla = "<table class='table table-striped'><caption>Listado de Bases</caption><tr><th>BASE</th><th>VALOR</th>";
+    Object.keys(pokemon.base).forEach(e =>{
+        codTabla+="<tr><td>"+e+"</td><td>"+pokemon.base[e]+"</td>";
+    })
+    codTabla +="</table>";
+    secBase.innerHTML=codTabla;
+
+    
+    
+    
     div.innerHTML = pokemon;
 
 }
