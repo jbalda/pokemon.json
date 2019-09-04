@@ -53,7 +53,7 @@ function mostrar (pokemon){
     titulo.innerText = pokemon.name; 
     secBody.appendChild(titulo);
     let secTipos = document.createElement("div");
-    secTipos.setAttribute("class","text-center mt-2 mb-2");
+    secTipos.setAttribute("class","text-center mt-2 mb-2 border border-secondary rounded p-3");
     pokemon.type.forEach(e =>{
         let spanTipo= document.createElement("span");
         spanTipo.setAttribute("class", "btn btn-primary mr-2");

@@ -16,11 +16,10 @@
     <main>
             <div class="card mb-3">
                     <div class="row no-gutters">
-                      <div id="secImagen" class="col-md-4">
+                      <div id="secImagen" class="col-md-4 p-3">
                        
                       </div>
                       <div id="datos" class="col-md-8">
-                     
                       </div>
                     </div>
                   </div>
@@ -31,5 +30,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/detalle.js"></script>
+    <style>
+        .card-title{
+            animation-name: mover;
+            animation-duration: 3s;
+        }
+    
+        @keyframes mover{
+            from{ 
+                margin-left:50%;
+            }
+            to{
+                margin-left:0%;
+            }
+        }
+    </style>
 </body>
 </html>

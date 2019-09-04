@@ -1,7 +1,7 @@
 /**
  * Hace una llamada AJAX descargando el achivo pokedex.json
  */
-function buscar(conFiltro) {
+function buscar(objetoBusqueda) {
     //Creo el objeto XMLHttpRequest 
     const xhr = new XMLHttpRequest();
     
@@ -16,12 +16,12 @@ function buscar(conFiltro) {
         let dataArray = JSON.parse(xhr.responseText);
 
         //Si hay que filtrar, busco los elementos del form y llamo a filtrar
-        if (conFiltro) {
+        if (objetoBusqueda) {
             //Tomo el nombre
             let nombre = document.getElementById("form-nombre").value;
 
             let ataqueMin = document.getElementById("form-ataque-min").value;
-            let ataqueMax = document.getElementById("form-ataque-max").selelector;
+            let ataqueMax = document.getElementById("form-ataque-max").value;
 
             //Agregado para buscar por tipo
             let selTipo = document.getElementById("form-tipo");
@@ -35,7 +35,7 @@ function buscar(conFiltro) {
             let velocidadMin =document.getElementById("form-velocidad-min").value; 
             let velocidadMax =document.getElementById("form-velocidad-max").value; 
 
-            dataArray = filtrar(dataArray, nombre, ataqueMin, ataqueMax, tipo, defensaMin, defensaMax, velocidadMin, velocidadMax);
+            dataArray = filtrar(dataArray, objetoBusqueda.nombre, objetoBusqueda.ataqueMin, objetoBusqueda.ataqueMax, objetoBusqueda.tipo, objetoBusqueda.defensaMin, objetoBusqueda.defensaMax, objetoBusqueda.velocidadMin, objetoBusqueda.velocidadMax);
         }
 
         mostrarResultados(dataArray);
@@ -155,8 +155,70 @@ function mostrarResultados(dataArray) {
 
 //Cuando el usuario hace click en el botón buscar...
 let btnBuscar = document.getElementById("btnBuscar");
+let btnBuscar2 = document.getElementById("btnBuscar2");
 btnBuscar.onclick = function() {
-    buscar(true);
+    //Tomo el nombre
+    let nombre = document.getElementById("form-nombre").value;
+
+    let ataqueMin = document.getElementById("form-ataque-min").value;
+    let ataqueMax = document.getElementById("form-ataque-max").value;
+
+    //Agregado para buscar por tipo
+    let selTipo = document.getElementById("form-tipo");
+    let tipo = selTipo[selTipo.selectedIndex].value;
+
+    //Agregado para filtrar por Defensa
+    let defensaMin =document.getElementById("form-defensa-min").value; 
+    let defensaMax =document.getElementById("form-defensa-max").value; 
+
+    //Agregado para filtrar por Velocidad
+    let velocidadMin =document.getElementById("form-velocidad-min").value; 
+    let velocidadMax =document.getElementById("form-velocidad-max").value; 
+
+    var datoBusqueda = {
+        nombre:nombre,
+        ataqueMin:ataqueMin,
+        ataqueMax:ataqueMax,
+        tipo:tipo,
+        defensaMin: defensaMin,
+        defensaMax: defensaMax,
+        velocidadMin: velocidadMin,
+        velocidadMax: velocidadMax
+    }
+    buscar(datoBusqueda);
+};
+btnBuscar2.onclick = function() {
+     //Tomo el nombre
+    let nombre = document.getElementById("form-nombre1").value;
+
+    let ataqueMin = document.getElementById("form-ataque-min1").value;
+    let ataqueMax = document.getElementById("form-ataque-max1").value;
+
+    //Agregado para buscar por tipo
+    let selTipo = document.getElementById("form-tipo1");
+    let tipo = selTipo[selTipo.selectedIndex].value;
+
+    //Agregado para filtrar por Defensa
+    let defensaMin =document.getElementById("form-defensa-min1").value; 
+    let defensaMax =document.getElementById("form-defensa-max1").value; 
+
+    //Agregado para filtrar por Velocidad
+    let velocidadMin =document.getElementById("form-velocidad-min1").value; 
+    let velocidadMax =document.getElementById("form-velocidad-max1").value; 
+
+
+    var datoBusqueda = {
+        nombre:nombre,
+        ataqueMin:ataqueMin,
+        ataqueMax:ataqueMax,
+        tipo:tipo,
+        defensaMin: defensaMin,
+        defensaMax: defensaMax,
+        velocidadMin: velocidadMin,
+        velocidadMax: velocidadMax
+    }
+    buscar(datoBusqueda);
+    $('#modelId').modal('hide')
 };
 
 //Cuando la página está lista muestro todos los pokemones

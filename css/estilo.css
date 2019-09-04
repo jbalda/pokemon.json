@@ -163,3 +163,7 @@ a.pokemon ul.stats li{
         opacity: 0;
     }
 }
+
+.bg-principal{
+    background-color: #EF5350;
+}
