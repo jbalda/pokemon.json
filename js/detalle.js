@@ -41,7 +41,6 @@ function filtrarPorId(arrPokemones, id){
 }
 
 function mostrar (pokemon){
-    let div = document.getElementById("resultado");
     let secImagen = document.getElementById("secImagen");
     secImagen.innerHTML ="<img class='card-img' src='" + pokemon.picture +"'>"
     let secDatos = document.getElementById("datos");
@@ -69,12 +68,6 @@ function mostrar (pokemon){
     })
     codTabla +="</table>";
     secBase.innerHTML=codTabla;
-
-    
-    
-    
-    div.innerHTML = pokemon;
-
 }
 
 cargarDatosPokemon();
