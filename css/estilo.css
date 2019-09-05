@@ -167,3 +167,19 @@ a.pokemon ul.stats li{
 .bg-principal{
     background-color: #EF5350;
 }
+
+/*Agregado*/
+
+.card-title{
+    animation-name: mover;
+    animation-duration: 3s;
+}
+
+@keyframes mover{
+    from{ 
+        margin-left:50%;
+    }
+    to{
+        margin-left:0%;
+    }
+}
