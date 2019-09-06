@@ -183,3 +183,9 @@ a.pokemon ul.stats li{
         margin-left:0%;
     }
 }
+
+footer{
+    background-color: white;
+    padding: 20px;
+    margin-top:20px;
+}
