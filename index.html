@@ -1,107 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
     <title>Pokédex Online</title>
 </head>
+
 <body>
     <div class="container-fluid bg-principal">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-principal container">
-        <a class="navbar-brand" href="index.html">Pokédex Online</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <button type="button" class="btn btn-success btn-block d-inline d-sm-none" data-toggle="modal" data-target="#modelId">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-principal container">
+            <a class="navbar-brand" href="index.html">Pokédex Online</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-success btn-block d-inline d-sm-none" data-toggle="modal"
+                    data-target="#modelId">
                     Buscar
-                  </button>
-        </div>
-    </nav>
-</div>
+                </button>
+            </div>
+        </nav>
+    </div>
     <header>
         <h1>Pokédex Online</h1>
     </header>
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 d-none d-sm-block">
-                    <div class="form-container rounded mb-3 mb-md-0">
-                        <h4 class="rounded-top">Búsqueda</h4>
-                        <form>
-                            <div class="form-group col-auto">
-                                <label>Nombre:</label>
-                                <input id="form-nombre" type="text" name="form-nombre" class="form-control" placeholder="Ej. Pikachu" autocomplete="off"/>
-                            </div>
-                            <div class="form-group col-auto">
-                                <select name="form-tipo" id="form-tipo" name="form-tipo" class="form-control">
-                                    <option value="" selected>Seleccionar tipo</option>
-                                    <option value="Fire">Fuego</option>
-                                    <option value="Water">Agua</option>
-                                    <option value="Poison">Veneno</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-auto">
-                                <label>Ataque:</label>
-                                <div class="row">
-                                    <div class="col-md-6"> 
-                                        <input id="form-ataque-min" type="number" name="form-ataque-min" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                    </div>
-                                    <div class="col-md-6"> 
-                                        <input id="form-ataque-max" type="number" name="form-ataque-max" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 d-none d-sm-block">
+                <aside class="form-container rounded mb-3 mb-md-0">
+                    <h4 class="rounded-top">Búsqueda</h4>
+                    <form>
+                        <div class="form-group col-auto">
+                            <label>Nombre:</label>
+                            <input id="form-nombre" type="text" name="form-nombre" class="form-control"
+                                placeholder="Ej. Pikachu" autocomplete="off" />
+                        </div>
+                        <div class="form-group col-auto">
+                            <select name="form-tipo" id="form-tipo" name="form-tipo" class="form-control">
+                                <option value="" selected>Seleccionar tipo</option>
+                                <option value="Fire">Fuego</option>
+                                <option value="Water">Agua</option>
+                                <option value="Poison">Veneno</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-auto">
+                            <label>Ataque:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input id="form-ataque-min" type="number" name="form-ataque-min"
+                                        class="form-control form-control-md" placeholder="Mínimo" size="3" />
                                 </div>
-                            </div>
-                            <div class="form-group col-auto">
-                                <label>Defensa:</label>
-                                <div class="row">
-                                    <div class="col-md-6"> 
-                                        <input id="form-defensa-min" name="form-defensa-min" type="number" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                    </div>
-                                    <div class="col-md-6"> 
-                                        <input id="form-defensa-max" name="form-defensa-max" type="number" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                    </div>
+                                <div class="col-md-6">
+                                    <input id="form-ataque-max" type="number" name="form-ataque-max"
+                                        class="form-control form-control-md" placeholder="Máximo" size="3" />
                                 </div>
-                            </div>
-                            <div class="form-group col-auto">
-                                <label>Velocidad:</label>
-                                <div class="row">
-                                    <div class="col-md-6"> 
-                                        <input id="form-velocidad-min" name="form-velocidad-min" type="number" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                    </div>
-                                    <div class="col-md-6"> 
-                                        <input id="form-velocidad-max" name="form-velocidad-max" type="number" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-auto">
-                                <input id="btnBuscar" type="button" value="Buscar" class="btn-buscar btn btn-lg btn-primary"/>
                             </div>
                         </div>
+                        <div class="form-group col-auto">
+                            <label>Defensa:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input id="form-defensa-min" name="form-defensa-min" type="number"
+                                        class="form-control form-control-md" placeholder="Mínimo" size="3" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="form-defensa-max" name="form-defensa-max" type="number"
+                                        class="form-control form-control-md" placeholder="Máximo" size="3" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-auto">
+                            <label>Velocidad:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input id="form-velocidad-min" name="form-velocidad-min" type="number"
+                                        class="form-control form-control-md" placeholder="Mínimo" size="3" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="form-velocidad-max" name="form-velocidad-max" type="number"
+                                        class="form-control form-control-md" placeholder="Máximo" size="3" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-auto">
+                            <input id="btnBuscar" type="button" value="Buscar"
+                                class="btn-buscar btn btn-lg btn-primary" />
+                        </div>
                     </form>
-                </div>
-                <div class="poke-container col col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <div id="items" class="row">
+                </aside>
+            </div>
+            <div class="poke-container col col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <main id="items" class="row">
 
-                    </div>
-                </div>
+                </main>
             </div>
         </div>
-    </article>
+    </div>
+
     <footer class="container-fluid">
         <div class="row">
             <div class="col-sm-4 align-self-center">
                 <p>
-                    Modificado por: 
+                    Modificado por:
                     <ul class="ml-3">
                         <li>Álvarez, Aldana Ailén</li>
                         <li>Alegre, Lucas Ezequiel</li>
@@ -111,90 +124,100 @@
                 </p>
             </div>
             <div class="col-sm-4">
-                    <p><img class="img-fluid" src="http://www.fcad.uner.edu.ar/wp-content/themes/arras/images/uner-fcad-header.jpg"</p>
-            </div>
-            <div class="col-sm-4 align-self-center">
-                <p class="text-right">Para: Introducción a la Programación Web</p>
-                <p class="text-right">Año 2019</p>
+                <p><img class="img-fluid"
+                        src="http://www.fcad.uner.edu.ar/wp-content/themes/arras/images/uner-fcad-header.jpg" </p>
+                        </div> <div class="col-sm-4 align-self-center">
+                    <p class="text-right">Para: Introducción a la Programación Web</p>
+                    <p class="text-right">Año 2019</p>
             </div>
         </div>
     </footer>
 
     <!-- Button trigger modal -->
-    
-    
+
+
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                 
+
                     <h4 class="modal-title rounded-top">Búsqueda</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                        <div class="form-container rounded">
-                                
-                                <form>
-                                    <div class="form-group col-auto">
-                                        <label>Nombre:</label>
-                                        <input id="form-nombre1" type="text" name="form-nombre1" class="form-control" placeholder="Ej. Pikachu" autocomplete="off"/>
+                    <div class="form-container rounded">
+
+                        <form>
+                            <div class="form-group col-auto">
+                                <label>Nombre:</label>
+                                <input id="form-nombre1" type="text" name="form-nombre1" class="form-control"
+                                    placeholder="Ej. Pikachu" autocomplete="off" />
+                            </div>
+                            <div class="form-group col-auto">
+                                <select name="form-tipo1" id="form-tipo1" class="form-control">
+                                    <option value="" selected>Seleccionar tipo</option>
+                                    <option value="Fire">Fuego</option>
+                                    <option value="Water">Agua</option>
+                                    <option value="Poison">Veneno</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label>Ataque:</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input id="form-ataque-min1" type="number" name="form-ataque-min1"
+                                            class="form-control form-control-md" placeholder="Mínimo" size="3" />
                                     </div>
-                                    <div class="form-group col-auto">
-                                        <select name="form-tipo1" id="form-tipo1" class="form-control">
-                                            <option value="" selected>Seleccionar tipo</option>
-                                            <option value="Fire">Fuego</option>
-                                            <option value="Water">Agua</option>
-                                            <option value="Poison">Veneno</option>
-                                        </select>
+                                    <div class="col-md-6">
+                                        <input id="form-ataque-max1" type="number" name="form-ataque-max1"
+                                            class="form-control form-control-md" placeholder="Máximo" size="3" />
                                     </div>
-                                    <div class="form-group col-auto">
-                                        <label>Ataque:</label>
-                                        <div class="row">
-                                            <div class="col-md-6"> 
-                                                <input id="form-ataque-min1" type="number" name="form-ataque-min1" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                            </div>
-                                            <div class="col-md-6"> 
-                                                <input id="form-ataque-max1" type="number" name="form-ataque-max1" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label>Defensa:</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input id="form-defensa-min1" name="form-defensa-min1" type="number"
+                                            class="form-control form-control-md" placeholder="Mínimo" size="3" />
                                     </div>
-                                    <div class="form-group col-auto">
-                                        <label>Defensa:</label>
-                                        <div class="row">
-                                            <div class="col-md-6"> 
-                                                <input id="form-defensa-min1" name="form-defensa-min1" type="number" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                            </div>
-                                            <div class="col-md-6"> 
-                                                <input id="form-defensa-max1" name="form-defensa-max1" type="number" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <input id="form-defensa-max1" name="form-defensa-max1" type="number"
+                                            class="form-control form-control-md" placeholder="Máximo" size="3" />
                                     </div>
-                                    <div class="form-group col-auto">
-                                        <label>Velocidad:</label>
-                                        <div class="row">
-                                            <div class="col-md-6"> 
-                                                <input id="form-velocidad-min1" name="form-velocidad-min1" type="number" class="form-control form-control-md" placeholder="Mínimo" size="3"/>
-                                            </div>
-                                            <div class="col-md-6"> 
-                                                <input id="form-velocidad-max1" name="form-velocidad-max1" type="number" class="form-control form-control-md" placeholder="Máximo" size="3"/>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-auto">
+                                <label>Velocidad:</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input id="form-velocidad-min1" name="form-velocidad-min1" type="number"
+                                            class="form-control form-control-md" placeholder="Mínimo" size="3" />
                                     </div>
-                               
-                            </form>
-                        </div>
+                                    <div class="col-md-6">
+                                        <input id="form-velocidad-max1" name="form-velocidad-max1" type="number"
+                                            class="form-control form-control-md" placeholder="Máximo" size="3" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <input id="btnBuscar2" type="button" value="Buscar" class="btn-buscar btn btn-lg btn-primary"/>
+                    <input id="btnBuscar2" type="button" value="Buscar" class="btn-buscar btn btn-lg btn-primary" />
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <script src="js/index.js"></script>
 </body>
 
