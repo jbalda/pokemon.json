@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokémon Detalle</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
-        <div class="container-fluid bg-principal">
-                <nav class="navbar navbar-expand-sm navbar-dark bg-principal container">
-                    <a class="navbar-brand" href="index.html">Pokédex Online</a>
-                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavId">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+    <div class="container-fluid bg-principal">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-principal container">
+            <a class="navbar-brand" href="index.html">Pokédex Online</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </div>
     <header>
-    <h1>Detalle del Pokemon</h1>
-</header>
-<div class="container">
-    <main>
-            <div class="card mb-3">
-                    <div class="row no-gutters">
-                      <div id="secImagen" class="col-md-4 p-3">
-                       
-                      </div>
-                      <div id="datos" class="col-md-8">
-                      </div>
+        <h1>Detalle del Pokemon</h1>
+    </header>
+    <div class="container">
+        <main>
+            <article class="card mb-3">
+                <div class="row no-gutters">
+                    <figure id="secImagen" class="col-md-4 p-3">
+
+                    </figure>
+                    <div id="datos" class="col-md-8">
                     </div>
-                  </div>
+                </div>
+            </article>
             <div id="resultado"></div>
-    </main>
-</div>
-<footer class="container-fluid">
+        </main>
+    </div>
+    <footer class="container-fluid">
         <div class="row">
             <div class=" align-self-center col-sm-4">
                 <p>
-                    Modificado por: 
+                    Modificado por:
                     <ul class="ml-3">
                         <li>Álvarez, Aldana Ailén</li>
                         <li>Alegre, Lucas Ezequiel</li>
@@ -56,17 +60,21 @@
                 </p>
             </div>
             <div class="col-sm-4">
-                    <p><img class="img-fluid" src="http://www.fcad.uner.edu.ar/wp-content/themes/arras/images/uner-fcad-header.jpg"</p>
-            </div>
-            <div class="col-sm-4 align-self-center">
-                <p class="text-right">Para: Introducción a la Programación Web</p>
-                <p class="text-right">Año 2019</p>
-                
+                <p><img class="img-fluid"
+                        src="http://www.fcad.uner.edu.ar/wp-content/themes/arras/images/uner-fcad-header.jpg" </p>
+                        </div> <div class="col-sm-4 align-self-center">
+                    <p class="text-right">Para: Introducción a la Programación Web</p>
+                    <p class="text-right">Año 2019</p>
+
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <script src="js/detalle.js"></script>
 </body>
+
 </html>
